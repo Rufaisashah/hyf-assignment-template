@@ -2,7 +2,7 @@ const notes = [];
 
 function saveNote(content, id) {
   
-  const note = {content: content, id: id };
+  const note = { content , id };
   notes.push(note);
 }
 
