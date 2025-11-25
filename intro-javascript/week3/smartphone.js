@@ -13,14 +13,8 @@ function logActivities() {
   console.log("All smartphone activities:");
   for (let i = 0; i < activities.length; i++) {
     const act = activities[i];
-    console.log(
-      "On " +
-        act.date +
-        ", you spent " +
-        act.duration +
-        " minutes on " +
-        act.activity
-    );
+    console.log(`On ${act.date}, you spent ${act.duration} minutes on ${act.activity}`);
+    
   }
 }
 
