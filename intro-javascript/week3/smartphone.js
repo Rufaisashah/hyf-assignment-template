@@ -2,9 +2,9 @@ const activities = [];
 
 function addActivity(date, activity, duration) {
   const newActivity = {
-    date: date,
-    activity: activity,
-    duration: duration,
+    date, 
+    activity,
+    duration
   };
   activities.push(newActivity);
 }
