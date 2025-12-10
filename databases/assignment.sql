@@ -2,3 +2,8 @@
 -- Just checking how many tasks exist in total.
 SELECT COUNT(*) AS total_tasks
 FROM task t;
+- 2. Count tasks that don’t have a due date
+-- Some tasks don’t have deadlines, so let's see how many.
+SELECT COUNT(*) AS no_due_date
+FROM task t
+WHERE t.due_date IS NULL;
