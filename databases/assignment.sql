@@ -22,3 +22,9 @@ FROM task t
 JOIN status s ON t.status_id = s.id
 WHERE s.name <> 'done';
 
+- 5. Show all tasks, newest first
+-- Sorting tasks by creation date descending.
+SELECT t.*
+FROM task t
+ORDER BY t.created_at DESC;
+
