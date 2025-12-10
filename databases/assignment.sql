@@ -7,3 +7,11 @@ FROM task t;
 SELECT COUNT(*) AS no_due_date
 FROM task t
 WHERE t.due_date IS NULL;
+
+- 3. Find all tasks that are done
+-- Looking for tasks with 'done' status.
+SELECT t.id, t.title, t.description, t.due_date, t.created_at
+FROM task t
+JOIN status s ON t.status_id = s.id
+WHERE s.name = 'done';
+
