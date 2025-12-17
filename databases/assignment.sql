@@ -13,14 +13,14 @@ WHERE t.due_date IS NULL;
 SELECT t.id, t.title, t.description, t.due_date, t.created_at
 FROM task t
 JOIN status s ON t.status_id = s.id
-WHERE s.name = 'done';
+WHERE s.id = 3;
 
 -- 4. Find tasks that are not done
 -- Tasks that are still pending or in progress.
 SELECT t.id, t.title, t.status_id
 FROM task t
 JOIN status s ON t.status_id = s.id
-WHERE s.name <> 'done';
+WHERE s.id != 3;
 
 - 5. Show all tasks, newest first
 -- Sorting tasks by creation date descending.
