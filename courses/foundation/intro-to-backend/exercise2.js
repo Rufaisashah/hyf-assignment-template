@@ -23,6 +23,32 @@ app.get("/all-users", async (req, res) => {
   res.json(rows);
 });
 
+
+app.get("/users/:id", async (req, res) => {
+  const { id } = req.params;
+  const user = await knexInstance("users").where({ id }).first();
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404).json({ error: "User not found" });
+  }
+});
+
+app.get("/search", async (req, res) => {
+  const { name } = req.query;
+  if (!name) {
+    return res.status(400).json({ error: "Please provide a name query parameter" });
+  }
+
+  const users = await knexInstance("users")
+    .where("first_name", "like", `%${name}%`);
+  
+  res.json(users);
+});
+
+
+
+
 // TODO implement more routes here
 
 app.listen(port, () => {

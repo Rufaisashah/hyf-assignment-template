@@ -8,6 +8,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/currentYear", (req, res) => {
+  res.send("2025 is the year");
   // TODO: Implement this function to return a JSON object containing the current year
 });
 
