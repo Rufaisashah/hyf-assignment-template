@@ -1,20 +1,106 @@
-body {
-  font-family: "Open Sans", sans-serif;
-  background-color: #f9fbfd;
-}
-
+/* Reset and body styling */
 * {
   box-sizing: border-box;
-}
-
-body,
-h1,
-h2 {
-  margin: 0;
-}
-
-ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  padding: 2rem;
+}
+
+/* Main header (you can add a h1 if needed) */
+h1 {
+  font-weight: 800;
+  font-size: 2rem;
+  color: #ff6600;
+  margin-bottom: 1rem;
+}
+
+/* Search input styling */
+#search {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s all;
+}
+
+#search:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+/* Product list container */
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product cards (li elements) */
+#product-list li {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#product-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Product title */
+#product-list h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+/* Product price */
+#product-list p.price {
+  font-weight: 700;
+  color: #ff6600;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+/* Product rating */
+#product-list p.rating {
+  color: #f5c518; /* golden star color */
+  margin-bottom: 0.8rem;
+}
+
+/* Favorite button */
+#product-list .favorite-btn {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s all;
+}
+
+#product-list .favorite-btn:hover {
+  background-color: #e65c00;
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #product-list {
+    grid-template-columns: 1fr;
+  }
 }
