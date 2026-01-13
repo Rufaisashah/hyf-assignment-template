@@ -1,0 +1,93 @@
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hogwarts-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+
+  background: linear-gradient(
+    180deg,
+    #f9e076,
+    #d4af37,
+    #b8860b
+  );
+
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+ 
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.4),
+    0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+
+body {
+  background: linear-gradient(135deg, #2c2c54, #1e272e);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+
+.container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #59509c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2b2175;
+}
+
+#houseOutput {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
