@@ -1,5 +1,7 @@
 Potato
 carrots
-brocolli
+ginger
 spinach
 tomato
+turnip
+bell pepers
