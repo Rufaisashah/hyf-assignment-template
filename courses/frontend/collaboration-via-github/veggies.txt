@@ -1,5 +1,7 @@
 Potato
 carrots
-brinjal
+ginger
 spinach
 tomato
+turnip
+bell pepers
