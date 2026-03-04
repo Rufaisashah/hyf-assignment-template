@@ -37,9 +37,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 1000;
-  padding: 25px 50px;
+  position: fixed;      /* 1. Make it stay at the top */
+  top: 0;  
+  left: 0;             /* 2. Pin it to the very top */
+  width: 100%;          /* 3. Make it stretch across the screen */
+  z-index: 1000;        /* 4. Keep it ABOVE the hero and projects */
+  padding: 15px 50px;   /* 5. Keep padding consistent */
   background: var(--white);
   box-shadow: var(--shadow-soft);
 }
@@ -76,6 +79,7 @@ body {
   font-size: 0.9rem;
 }
 .hero-section {
+  margin-top: 80px;
   height: 90vh; 
   display: flex;
   flex-direction: column;
