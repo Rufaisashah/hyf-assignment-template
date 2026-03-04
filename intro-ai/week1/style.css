@@ -1,11 +1,19 @@
 
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;        
-  background-color: #f0f8ff;  
-  padding: 40px;
-}
+:root {
+  --primary: #facf0f;
+  --text-main: #111;
+  --text-sub: #555;
+  --bg-body: #fcfcfc;
+  --white: #ffffff;
+  --primary-hover: #e6b800; 
+  --transition-fast: 0.3s;
+  
+  --glass-white: rgba(255, 255, 255, 0.532);
+  
+  --glass-grey: rgba(245, 245, 245, 0.184);
 
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.245);
+}
 
 h1 {
   color: #333;
