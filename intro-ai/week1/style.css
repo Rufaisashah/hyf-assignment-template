@@ -15,25 +15,67 @@
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.245);
 }
 
-h1 {
-  color: #333;
-}
-ul {
-  list-style-type: none;   
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-button {
-    margin-top: 40px;        
-  padding: 10px 20px;
- 
-  font-size: 16px;
-  background-color: #212121;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  font-family: "Montserrat", sans-serif;
+
+  background-color: var(--bg-body);
+  color: var(--text-main);
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  padding: 25px 50px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-image: url(./images/Profile.jpeg);
+  background-size: cover;
+  background-position: center;
+  border: 2px solid var(--primary);
+  background-color: var(--primary); 
+}
+
+.logo-text {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 700;
+  margin-left: 40px;
+  font-size: 0.9rem;
+}
+
 
 button:hover {
   background-color: #00b0b3;
