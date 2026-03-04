@@ -75,19 +75,87 @@ body {
   margin-left: 40px;
   font-size: 0.9rem;
 }
-
-
-button:hover {
-  background-color: #00b0b3;
+.hero-section {
+  height: 90vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background: #f5f5f5 url(./images/bk.png) center/cover no-repeat;
 }
 
-@media (max-width: 600px) {
-  body {
-    background-color: #e6f7ff;
-    padding: 20px;
-  }
-
-  button {
-    width: 100%;
-  }
+.hero-title {
+  font-size: clamp(2rem, 8vw, 3.5rem); 
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
 }
+
+.hero-subtext {
+  font-size: 1.2rem;
+  max-width: 800px;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--text-main);
+  padding: 18px 50px;
+  font-weight: 800;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+
+.project-card .cta-button {
+  padding: 10px 25px; 
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 5px 0; 
+  width: auto; 
+}
+
+
+.project-buttons {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  align-items: center; /* center buttons */
+}
+.cta-button:hover {
+  transform: translateY(-3px);
+  background: var(--primary-hover);
+}
+
+
+.projects-section {
+  padding: 100px 20px;
+  background: var(--white);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.yellow-line {
+  width: 35px;
+  height: 5px;
+  background: var(--primary);
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.project-card {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+
+  box-shadow: var(--shadow-soft);
+}
+
