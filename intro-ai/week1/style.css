@@ -155,12 +155,15 @@ body {
   border-radius: 10px;
 }
 
+/* --- CHANGE THIS SECTION --- */
 .project-card {
-  max-width: 800px;
-  margin: 60px auto;
+  width: 90%;           /* ADD THIS: Makes it look better on phones */
+  max-width: 800px;     /* KEEP THIS: Prevents it from getting too wide on desktop */
+  margin: 40px auto;    /* Reduced margin for better flow */
   padding: 40px;
-
+  background: var(--white);
   box-shadow: var(--shadow-soft);
+  border-radius: 8px;   /* Optional: adds a slight professional curve */
 }
 .about-section {
   padding: 100px 20px; /* spacing top/bottom */
@@ -351,11 +354,45 @@ body {
     color: var(--primary-yellow); /* Uses your existing yellow variable */
 }
 
+
+/* 1. Define the "Floating" movement */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); } /* Moves up 10px */
+  100% { transform: translateY(0px); }
+}
+
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  
+  
+  animation: float 3s ease-in-out infinite; 
+}
+
+/* 3. Add "Delay" so they don't move all at the same time (optional but pro) */
+.social-item:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.social-item:nth-child(3) {
+  animation-delay: 1s;
+}
+
+
+.social-item:hover {
+  animation-play-state: paused;
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%; /* better than 70px */
+    top: 100%; 
     left: 0;
     right: 0;
     background: var(--white);
