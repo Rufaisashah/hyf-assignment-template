@@ -192,6 +192,6 @@ header h1 {
     font-size: 1.8rem;
   }
   .grid-container {
-    grid-template-columns: 1fr; /* Stack cards in a single column on tiny screens */
+    grid-template-columns: 1fr; 
   }
 }
