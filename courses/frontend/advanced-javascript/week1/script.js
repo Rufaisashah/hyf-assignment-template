@@ -58,12 +58,21 @@ const highRatingsOnly = movies
     .filter(function(movie) { return movie.rating > 6; })
     .map(function(movie) { return movie.rating; });
 
-const keywordCount = movies.filter(function(movie) {
-    const titleLower = movie.title.toLowerCase();
-    return titleLower.includes("surfer") || 
-           titleLower.includes("alien") || 
-           titleLower.includes("benjamin");
-}).length;
+const keywords = ["surfer","alien","benjamin"];
+
+const keywordCount = movies.reduce(function(total, movie){
+
+    const title = movie.title.toLowerCase();
+
+    keywords.forEach(function(word){
+        if(title.includes(word)){
+            total++;
+        }
+    });
+
+    return total;
+
+},0);
 
 const duplicateTitles = movies.filter(function(movie) {
     const words = movie.title.toLowerCase().split(" ");
