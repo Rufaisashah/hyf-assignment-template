@@ -74,13 +74,19 @@ const keywordCount = movies.reduce(function(total, movie){
 
 },0);
 
-const duplicateTitles = movies.filter(function(movie) {
-    const words = movie.title.toLowerCase().split(" ");
-    return words.some(function(word, index) {
-        return words.indexOf(word) !== index && word.length > 1;
-    });
-});
 
+const duplicateTitles = movies.filter(function(movie){
+
+    const words = movie.title
+        .toLowerCase()
+        .replace(/[^\w\s]/g,"") 
+        .split(" ");
+
+    const uniqueWords = new Set(words);
+
+    return uniqueWords.size !== words.length;
+
+});
 const averageRating = (movies.reduce(function(total, movie) {
     return total + movie.rating;
 }, 0) / movies.length).toFixed(1);
