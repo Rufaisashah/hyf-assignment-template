@@ -55,19 +55,19 @@ h1 {
     margin-bottom: 30px;
     text-align: left;
 
-    /* --- THE AUTOFIT MAGIC --- */
-    width: fit-content;       /* 1. Shrinks the box to fit the text */
-    min-width: 250px;         /* 2. Prevents it from being too skinny when empty */
-    max-width: 90%;           /* 3. Prevents it from going off-screen on mobile */
-    margin-left: auto;        /* 4. Combined with margin-right, this centers */
-    margin-right: auto;       /* the "fit-content" box on the page */
     
-    /* Optional: Remove fixed height so it grows vertically as you add tasks */
+    width: fit-content;       
+    min-width: 250px;         
+    max-width: 90%;          
+    margin-left: auto;        
+    margin-right: auto;       
+    
+    
     min-height: 50px; 
 
 }
 
-/* 4. The Controls Grid */
+
 .controls {
     display: flex;
     flex-wrap: wrap;
