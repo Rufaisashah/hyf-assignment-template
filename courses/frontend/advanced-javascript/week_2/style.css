@@ -17,6 +17,13 @@ body {
     min-height: 100vh;
     user-select: none;
 }
+h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #444;
+    margin-bottom: 5px;
+}
 
 .game-container {
     background: var(--card);
