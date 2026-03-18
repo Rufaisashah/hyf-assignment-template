@@ -25,7 +25,7 @@ function planetLogFunction(callback) {
     callback(); 
 }
 
-//  TASK 7: runAfterDelay 
+//  TASK 7:  
 function runAfterDelay(delay, callback) {
     setTimeout(callback, delay * 1000);
 }
@@ -39,14 +39,14 @@ function jokeCreator(shouldTellFunnyJoke, logFunnyJoke, logBadJoke) {
     }
 }
 
-// The two joke functionsadd
+
 const funny = () => logToPage("Funny Joke: Why did the web developer walk out of the restaurant? Because of the table layout.");
 const bad = () => logToPage("Bad Joke: I'm reading a book on anti-gravity. It's impossible to put down.");
 
 
 // EVENT LISTENERS 
 
-// Task 3 5-second button
+// Task 3 
 document.getElementById('delay-btn-5').addEventListener('click', () => {
     logWithDelay(5, "Called after 5 seconds");
 });
