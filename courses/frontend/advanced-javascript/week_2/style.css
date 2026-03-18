@@ -1,0 +1,29 @@
+:root {
+    --primary: #4CAF50;
+    --player-s: #2f3542;
+    --player-l: #2f3542;
+    --bg: #f1f2f6;
+    --card: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+}
+
+.game-container {
+    background: var(--card);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 450px;
+    position: relative; /* Keeps the pop-up centered here */
+}
