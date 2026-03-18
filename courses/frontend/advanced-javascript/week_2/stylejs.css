@@ -1,0 +1,131 @@
+
+:root {
+    --primary-color: #b134dbf0;    
+    --accent-color: #e67e22;     
+    --bg-color: #f4f7f6;         
+    --card-bg: #ffffff;
+    --text-main: #2c3e50;
+    --radius: 12px;
+    --shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+
+#display-area {
+    background: var(--card-bg);
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto; 
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 6px solid var(--primary-color);
+    margin-bottom: 30px;
+    text-align: left; 
+}
+
+#display-area {
+   
+    background: var(--card-bg);
+    padding: 3px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 6px solid var(--primary-color);
+    margin-bottom: 30px;
+    text-align: left;
+
+    /* --- THE AUTOFIT MAGIC --- */
+    width: fit-content;       /* 1. Shrinks the box to fit the text */
+    min-width: 250px;         /* 2. Prevents it from being too skinny when empty */
+    max-width: 90%;           /* 3. Prevents it from going off-screen on mobile */
+    margin-left: auto;        /* 4. Combined with margin-right, this centers */
+    margin-right: auto;       /* the "fit-content" box on the page */
+    
+    /* Optional: Remove fixed height so it grows vertically as you add tasks */
+    min-height: 50px; 
+
+}
+
+/* 4. The Controls Grid */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button-group {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    flex: 1; 
+    min-width: 200px;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: #95a5a6;
+    text-transform: uppercase;
+}
+
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    margin: 5px;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+input {
+    width: 60px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.input-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
