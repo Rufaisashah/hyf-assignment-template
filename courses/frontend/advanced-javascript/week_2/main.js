@@ -39,14 +39,14 @@ function jokeCreator(shouldTellFunnyJoke, logFunnyJoke, logBadJoke) {
     }
 }
 
-// The two joke functions
+// The two joke functionsadd
 const funny = () => logToPage("Funny Joke: Why did the web developer walk out of the restaurant? Because of the table layout.");
 const bad = () => logToPage("Bad Joke: I'm reading a book on anti-gravity. It's impossible to put down.");
 
 
 // EVENT LISTENERS 
 
-// Task 3: 5-second button
+// Task 3 5-second button
 document.getElementById('delay-btn-5').addEventListener('click', () => {
     logWithDelay(5, "Called after 5 seconds");
 });
