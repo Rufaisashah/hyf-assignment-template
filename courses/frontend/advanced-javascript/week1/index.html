@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Data Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <h1>Movie Data Analysis</h1>
+        <p>Movie Analytics Dashboard</p>
+        
+        <div class="search-container">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="movie-search" placeholder="Search movies..." autocomplete="off">
+    
+    <ul id="search-results-list"></ul>
+</div>
+    </div>
+</header>
+    <main class="grid-container">
+        
+        <div class="card">
+            <h2>1. Short Titles</h2>
+            <ul class="result-list" id="short-titles-list"></ul>
+            <button id="btn-short" class="primary-btn">Show More</button>
+        </div>
+        
+        <div class="card">
+            <h2>2. Long Titles</h2>
+            <ul class="result-list" id="long-titles-list"></ul>
+            <button id="btn-long" class="primary-btn">Show More</button>
+        </div>
+
+        <div class="card">
+            <h2>4. Tagged Movies</h2>
+            <ul class="result-list" id="tagged-movies-list"></ul>
+            <button id="btn-tagged" class="primary-btn">Show More</button>
+        </div>
+
+        <div class="card">
+            <h2>5. Ratings above 6</h2>
+            <ul class="result-list" id="high-ratings-list"></ul>
+            <button id="btn-high-ratings" class="primary-btn">Show More</button>
+        </div>
+
+        <div class="card">
+            <h2>7. Duplicated Words</h2>
+            <ul class="result-list" id="duplicate-words-list"></ul>
+            <button id="btn-duplicate" class="primary-btn">Show More</button>
+        </div>
+
+        <div class="card">
+            <h2>3. 1980s Count</h2>
+            <p class="result" id="eighties-count"></p>
+        </div>
+
+        <div class="card">
+            <h2>6. Keyword Count</h2>
+            <p class="result" id="keyword-count"></p>
+        </div>
+
+        <div class="card">
+            <h2>8. Average Rating</h2>
+            <p class="result" id="average-rating"></p>
+        </div>
+
+        <div class="card">
+            <h2>9. Rating Counts</h2>
+            <p class="result" id="rating-counts"></p>
+        </div>
+        
+        <div class="card">
+    <h2>10. Movie Randomizer</h2>
+    <p id="random-movie-display" class="result">Click to find a movie!</p>
+    <button id="btn-surprise" class="primary-btn">Surprise Me!</button>
+</div>
+    </main>
+
+    <script src="movies.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
