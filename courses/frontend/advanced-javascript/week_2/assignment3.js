@@ -39,7 +39,8 @@ formatTimeConst(10);
 const gameManager = {
   title: "The Fastest Presser",
   difficulty: "Hard",
-  triggerWin: function () {
+  triggerWin() {
     console.log("🏆 winner! Pop-up active and confetti falling!");
   },
 };
+ gameManager.triggerWin()
