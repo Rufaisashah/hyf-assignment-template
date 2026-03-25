@@ -47,7 +47,7 @@ async function convertcurrency(event) {
     const response =await fetch(`https://open.er-api.com/v6/latest/${fromCurrencyValue}`);
     const data = await response.json()
     const rate = data.rates[toCurrencyValue];
-    const convertedAmount = amount * rate;
+    const convertedAmount = (amount * rate).toFixed(2);
     resultDiv.textContent = `${amount}${fromCurrencyValue} =${convertedAmount} ${toCurrencyValue}`;
 
 }
