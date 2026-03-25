@@ -1,7 +1,7 @@
 const converterForm = document.getElementById("converter-form");
 const fromCurrency = document.getElementById("from-currency");
 const toCurrency = document.getElementById("to-currency");
-const inputAmount = document.getElementById("amount");
+const amountInput = document.getElementById("amount");
 const resultDiv = document.getElementById("result");
 
 let exchangeRates = {};
@@ -32,8 +32,22 @@ async function fetchCurrencies() {
  fromCurrency.value = "EUR";
   toCurrency.value = "DKK";
 }
-function convertcurrency(event) {
+async function convertcurrency(event) {
     event.preventDefault(); 
 
-    
+    const amount =parseFloat(amountInput.value)
+    const fromCurrencyValue= fromCurrency.value
+     const toCurrencyValue= toCurrency.value
+
+     if(amount<0){
+        alert ("Please Enter a valid amount");
+        return;
+     }
+
+    const response =await fetch(`https://open.er-api.com/v6/latest/${fromCurrencyValue}`);
+    const data = await response.json()
+    const rate = data.rates[toCurrencyValue];
+    const convertedAmount = amount * rate;
+    resultDiv.textContent = `${amount}${fromCurrencyValue} =${convertedAmount} ${toCurrencyValue}`;
+
 }
