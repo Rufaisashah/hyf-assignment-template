@@ -32,7 +32,7 @@ async function fetchCurrencies() {
   toCurrency.value = "DKK";
 }
 async function convertCurrency(event) {
-    event.preventDefault(); 
+    event.preventDefault(); //// Prevent the form from refreshing the page so we can stay on the screen and show the result
 
     const amount =parseFloat(amountInput.value)
     const fromCurrencyValue= fromCurrency.value
