@@ -31,7 +31,7 @@ async function fetchCurrencies() {
  fromCurrency.value = "EUR";
   toCurrency.value = "DKK";
 }
-async function convertcurrency(event) {
+async function convertCurrency(event) {
     event.preventDefault(); 
 
     const amount =parseFloat(amountInput.value)
