@@ -38,8 +38,8 @@ async function convertCurrency(event) {
     const fromCurrencyValue= fromCurrency.value
      const toCurrencyValue= toCurrency.value
 
-     if(amount<0){
-        alert ("Please Enter a valid amount");
+     if(amount<=0){
+        alert ("Please enter an amount greater than 0.");
         return;
      }
 
