@@ -4,7 +4,6 @@ const toCurrency = document.getElementById("to-currency");
 const amountInput = document.getElementById("amount");
 const resultDiv = document.getElementById("result");
 
-let exchangeRates = {};
 
 window.addEventListener("load", fetchCurrencies);
 converterForm.addEventListener("submit", convertcurrency);
