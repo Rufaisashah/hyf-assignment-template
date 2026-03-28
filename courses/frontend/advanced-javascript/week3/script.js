@@ -12,7 +12,7 @@ async function fetchCurrencies() {
   const response = await fetch("https://open.er-api.com/v6/latest/USD");
   const data = await response.json();
   
-  console.log(data);
+
   exchangeRates = data.rates;
   const currencyOptions = Object.keys(data.rates);
 
