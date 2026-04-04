@@ -4,50 +4,59 @@ const toCurrency = document.getElementById("to-currency");
 const amountInput = document.getElementById("amount");
 const resultDiv = document.getElementById("result");
 
-let exchangeRates = {};
 
-window.addEventListener("load", fetchCurrencies);
-converterForm.addEventListener("submit", convertcurrency);
+window.addEventListener("load", initializeApp);
 
-async function fetchCurrencies() {
+converterForm.addEventListener("submit", convertCurrency);
+
+async function getCurrencyList() {                              // Renamed for clarity
   const response = await fetch("https://open.er-api.com/v6/latest/USD");
   const data = await response.json();
-  
-  console.log(data);
-  exchangeRates = data.rates;
-  const currencyOptions = Object.keys(data.rates);
+  return Object.keys(data.rates);
+}
 
-  currencyOptions.forEach(currency => {
-    
-    const option1 = document.createElement("option");
-    option1.value = currency;
-    option1.textContent = currency; 
-    fromCurrency.appendChild(option1)
 
-    const option2 = document.createElement("option");
-    option2.value = currency;
-    option2.textContent = currency; 
-    toCurrency.appendChild(option2);
-});
- fromCurrency.value = "EUR";
+function populateDropdowns(currencies) {
+  currencies.forEach(currency => {
+    fromCurrency.appendChild(new Option(currency, currency));
+    toCurrency.appendChild(new Option(currency, currency));
+  });
+
+  fromCurrency.value = "EUR";
   toCurrency.value = "DKK";
 }
-async function convertcurrency(event) {
-    event.preventDefault(); 
 
-    const amount =parseFloat(amountInput.value)
-    const fromCurrencyValue= fromCurrency.value
-     const toCurrencyValue= toCurrency.value
 
-     if(amount<0){
-        alert ("Please Enter a valid amount");
-        return;
-     }
+async function initializeApp() {
+  try {
+    // FIX 3: Calling the correct function name here
+    const currencies = await getCurrencyList();
+    populateDropdowns(currencies);
+  } catch (error) {
+    console.error("Failed to initialize app:", error);
+    resultDiv.textContent = "Error loading currency list.";
+  }
+}
 
-    const response =await fetch(`https://open.er-api.com/v6/latest/${fromCurrencyValue}`);
-    const data = await response.json()
+
+async function convertCurrency(event) {
+  event.preventDefault(); // Prevents page refresh
+
+  const amount = parseFloat(amountInput.value);
+  const fromCurrencyValue = fromCurrency.value;
+  const toCurrencyValue = toCurrency.value;
+
+  if (amount <= 0) {
+    alert("Please enter an amount greater than 0.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`https://open.er-api.com/v6/latest/${fromCurrencyValue}`);
+    const data = await response.json();
+    
     const rate = data.rates[toCurrencyValue];
-    const convertedAmount = (amount * rate).toFixed(2);
+    const convertedAmount = amount * rate;
     resultDiv.textContent = `${amount}${fromCurrencyValue} =${convertedAmount} ${toCurrencyValue}`;
 
 }
