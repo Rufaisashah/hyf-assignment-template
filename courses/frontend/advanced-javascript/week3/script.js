@@ -56,11 +56,7 @@ async function convertCurrency(event) {
     const data = await response.json();
     
     const rate = data.rates[toCurrencyValue];
-    const convertedAmount = (amount * rate).toFixed(2);
-    
-    resultDiv.textContent = `${amount} ${fromCurrencyValue} = ${convertedAmount} ${toCurrencyValue}`;
-  } catch (error) {
-    console.error("Conversion error:", error);
-    resultDiv.textContent = "Error performing conversion.";
-  }
+    const convertedAmount = amount * rate;
+    resultDiv.textContent = `${amount}${fromCurrencyValue} =${convertedAmount} ${toCurrencyValue}`;
+
 }

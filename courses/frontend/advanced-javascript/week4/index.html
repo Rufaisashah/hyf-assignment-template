@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screenshot Saver</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web Screenshot Generator</h1>
+
+      <div class="controls">
+        <input type="url" id="urlInput" placeholder="Enter Url" required />
+        <button id="captureBtn">Capture Screenshot</button>
+      </div>
+
+      <div id="currentCaptureArea" class="capture-preview hidden">
+        <h2>Current Capture</h2>
+        <div class="preview-card">
+          <img id="currentImage" src="" alt="Captured Screenshot" />
+          <button id="saveBtn" class="save-btn">Save to Database</button>
+        </div>
+        <hr class="divider" />
+      </div>
+
+      <h2>My Saved Screenshots</h2>
+      <div id="savedScreenshotsList" class="grid-container"></div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
