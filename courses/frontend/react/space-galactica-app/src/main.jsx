@@ -10,7 +10,7 @@ import NasaCollaboration from "./pages/NasaCollaborationPage/NasaCollaborationPa
 import "./main.css";
 
 // 🧑🏽‍🚀 Task - Week 4 - part 1
-// Create a Wishlist context to share the wishlist data across components. 
+// Create a Wishlist context to share the wishlist data across components.
 // There is a /src/contexts folder- you will have to create a new file there.
 // You will have to import and use the context provider here, so that all routes can access the context.
 // The context should have the following properties:
@@ -25,9 +25,9 @@ const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { 
-          index: true,
-          element: <HomePage /> 
+      {
+        index: true,
+        element: <HomePage />,
       },
       {
         path: "/destination",

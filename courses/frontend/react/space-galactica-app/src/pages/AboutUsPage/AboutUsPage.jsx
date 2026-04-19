@@ -1,4 +1,4 @@
-import styles from './AboutUsPage.module.css';
+import styles from "./AboutUsPage.module.css";
 import { OurValues } from "./OurValues";
 import { OurCrew } from "./OurCrew";
 import { OurPartners } from "./OurPartners";
@@ -7,22 +7,22 @@ import { OurPartners } from "./OurPartners";
 // After you are finished with creating the page, move the OurValues, OurCrew, OurPartners components into their own files in this folder.
 // Import and use the components from the newly created files.
 
-export const AboutUsPage = () => {
+const AboutUsPage = () => {
   return (
     <div className={styles.fullBGpicture}>
       <main className={styles.mainContent}>
         <h1>About us</h1>
         <section className={styles.card}>
-          <h2>Our Values</h2>
-          <OurValues/>
+          <OurValues />
         </section>
+
         <section className={styles.card}>
           <h2>The crew</h2>
-          <OurCrew/>
+          <OurCrew />
         </section>
         <section className={styles.card}>
           <h2>Our Partners</h2>
-          <OurPartners/>
+          <OurPartners />
         </section>
       </main>
     </div>
