@@ -48,11 +48,27 @@ export const Footer = () => {
       <div className={styles.footerLinks}>
         <h3>Follow us</h3>
         <ul className={styles.footerList}>
-          <SocialMediaItem url="https://facebook.com" title="Facebook" icon="/socialmedia/facebook.png" />
-<SocialMediaItem url="https://instagram.com" title="Instagram" icon="/socialmedia/instagram.png" />
+          <SocialMediaItem
+            url="https://facebook.com"
+            title="Facebook"
+            icon="/socialmedia/facebook.png"
+          />
+          <SocialMediaItem
+            url="https://instagram.com"
+            title="Instagram"
+            icon="/socialmedia/instagram.png"
+          />
 
-<SocialMediaItem url="https://linkedin.com" title="LinkedIn" icon="/socialmedia/linkedin.png" />
-<SocialMediaItem url="https://youtube.com" title="Youtube" icon="/socialmedia/youtube.png" />
+          <SocialMediaItem
+            url="https://linkedin.com"
+            title="LinkedIn"
+            icon="/socialmedia/linkedin.png"
+          />
+          <SocialMediaItem
+            url="https://youtube.com"
+            title="Youtube"
+            icon="/socialmedia/youtube.png"
+          />
         </ul>
       </div>
     </footer>
