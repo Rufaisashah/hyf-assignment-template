@@ -18,10 +18,10 @@ Sustainability: We are committed to making space exploration sustainable for fut
 
 Community: We believe in the power of collective exploration. Our journeys are not just about reaching new destinations; they are about building a community of space enthusiasts who share a passion for the stars.
 
-
 ### Our Crew
 
 #### Description
+
 Our crew is the heart and soul of Galactica. We are a diverse team of seasoned space explorers, engineers, and visionaries who are united by a common goal: to make space travel accessible and exciting for all.
 
 Captain Sarah Vega: A former NASA astronaut with over 15 years of experience, Captain Vega leads our missions with unparalleled expertise and a passion for space exploration.

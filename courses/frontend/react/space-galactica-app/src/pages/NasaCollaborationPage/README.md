@@ -2,10 +2,11 @@
 
 You need to generate an API Key at NASA's website!
 
->> Link to the NASA API: https://api.nasa.gov/
+> > Link to the NASA API: https://api.nasa.gov/
 
 After subscribing, you will receive an email with your API_KEY
 Overwrite the `API_KEY` variable with your `API_KEY` from the email. It should look like this:
+
 ```
 const API_KEY = 'hlcFvEJEPXDr9eUJ7fMHpbsX.....h9V';
 ```
