@@ -19,6 +19,19 @@ const navbarItems = [
     link: "/nasa_collaboration",
   },
 ];
+const NavItem = ({ title, link, index, isActive }) => {
+  return (
+    <li
+      className={classNames(styles.navbarLinks, {
+        [styles.isLinkActive]: isActive,
+      })}
+    >
+      <Link to={link}>
+        <b>0{index + 1}</b> {title}
+      </Link>
+    </li>
+  );
+};
 
 export const Navbar = () => {
   const currentPath = useLocation().pathname;
@@ -34,35 +47,24 @@ export const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.navbarBG} />
         <ul className={styles.navbarList}>
-          {/* 🧑🏽‍🚀 Task - Week 2 */}
-          {/* Create a <NavItem> component, which accepts the following props: title, link, isActive.  */}
-          <li
-            className={classNames(styles.navbarLinks, {
-              [styles.isLinkActive]: navbarItems[0].link === currentPath,
-            })}
-          >
-            <Link to={navbarItems[0].link}>
-              <b>01</b> {navbarItems[0].title}
-            </Link>
-          </li>
-          <li
-            className={classNames(styles.navbarLinks, {
-              [styles.isLinkActive]: navbarItems[1].link === currentPath,
-            })}
-          >
-            <Link to={navbarItems[1].link}>
-              <b>02</b> {navbarItems[1].title}
-            </Link>
-          </li>
-          <li
-            className={classNames(styles.navbarLinks, {
-              [styles.isLinkActive]: navbarItems[2].link === currentPath,
-            })}
-          >
-            <Link to={navbarItems[2].link}>
-              <b>03</b> NASA COLLABORATION
-            </Link>
-          </li>
+          <NavItem
+            title={navbarItems[0].title}
+            link={navbarItems[0].link}
+            index={0}
+            isActive={navbarItems[0].link === currentPath}
+          />
+          <NavItem
+            title={navbarItems[1].title}
+            link={navbarItems[1].link}
+            index={1}
+            isActive={navbarItems[1].link === currentPath}
+          />
+          <NavItem
+            title={navbarItems[2].title}
+            link={navbarItems[2].link}
+            index={2}
+            isActive={navbarItems[2].link === currentPath}
+          />
           {/* 🧑🏽‍🚀 Task - Week 3 */}
           {/* Replace repeating content by using .map() and the previously created NavItem component. */}
           <li className={styles.wishlistBadge} aria-label="Wishlist"></li>
