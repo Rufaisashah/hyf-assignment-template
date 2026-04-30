@@ -3,12 +3,12 @@ import styles from "./DestinationPage.module.css";
 
 export const AddWishlistItem = ({ onAddWishlistItem }) => {
   const [thumbnail, setThumbnail] = useState("/destination/image-europa.png");
-  const [name, setName] = useState(""); // ← Week 3: useState for input
+  const [name, setName] = useState(""); 
 
   const onAddItemPressed = () => {
-    if (!name.trim()) return; // don't add if input is empty
-    onAddWishlistItem(name, thumbnail); // call parent function
-    setName(""); // clear the input
+    if (!name.trim()) return; 
+    onAddWishlistItem(name, thumbnail); 
+    setName(""); 
   };
 
   return (
@@ -19,12 +19,12 @@ export const AddWishlistItem = ({ onAddWishlistItem }) => {
         id="customWishlist"
         type="text"
         value={name}
-        onChange={(e) => setName(e.target.value)} // ← connect input to state
+        onChange={(e) => setName(e.target.value)} 
       />
       <label htmlFor="customWishlistThumbnail">Wishlist item thumbnail</label>
       <select
         id="customWishlistThumbnail"
-        onChange={(e) => setThumbnail(e.target.value)} // ← connect select to state
+        onChange={(e) => setThumbnail(e.target.value)} 
       >
         <option value="/destination/image-europa.png">EUROPA</option>
         <option value="/destination/image-mars.png">MARS</option>
