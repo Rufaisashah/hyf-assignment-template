@@ -1,6 +1,35 @@
 import { useState } from "react";
 import styles from "./DestinationPage.module.css";
 import { PlanetCard } from "./PlanetCard";
+import { PlanetsWishlistItem } from "./PlanetsWishlistItem";
+import { AddWishlistItem } from "./AddWishlistItem";
+
+const PLANETS_DATA = [
+  {
+    name: "Europa",
+    description:
+      "Europa is one of Jupiter's moons believed to have a liquid water ocean beneath its icy surface, making it a prime candidate for extraterrestrial life.",
+    thumbnail: "/destination/image-europa.png",
+  },
+  {
+    name: "Moon",
+    description:
+      "Earth's Moon is the closest celestial body to our planet, offering a unique opportunity to experience low gravity and stunning views of Earth.",
+    thumbnail: "/destination/image-moon.png",
+  },
+  {
+    name: "Mars",
+    description:
+      "Mars is the fourth planet from the Sun. Known as the Red Planet, it has the largest volcano and canyon in the solar system.",
+    thumbnail: "/destination/image-mars.png",
+  },
+  {
+    name: "Titan",
+    description:
+      "Titan is Saturn's largest moon and the only moon known to have a dense atmosphere and bodies of liquid on its surface.",
+    thumbnail: "/destination/image-titan.png",
+  },
+];
 
 export const Destinations = () => {
   const [planetsWishlist, setPlanetsWishlist] = useState([]);
@@ -20,6 +49,7 @@ export const Destinations = () => {
   const addPlanetToWishlist = (name, thumbnail) => {
     setPlanetsWishlist((prev) => [...prev, { name, thumbnail }]);
   };
+
   const removePlanetFromWishlist = (name) => {
     setPlanetsWishlist((prev) => prev.filter((planet) => planet.name !== name));
   };
@@ -37,47 +67,36 @@ export const Destinations = () => {
             <p>You have {planetsWishlist.length} planets in your wishlist</p>
           )}
 
-          {/* 🧑🏽‍🚀 Task - Week 3 */}
-          {/* Use the AddWishlistItem component here. */}
+          {/* Week 3 - AddWishlistItem */}
+          <AddWishlistItem onAddWishlistItem={addPlanetToWishlist} />
 
-          {/* 🧑🏽‍🚀 Task - Week 3
+          {/* Week 3 - .map() over wishlist */}
           <h3>Your current wishlist</h3>
           <div className={styles.wishlistList}>
-            ...
-            Use .map() to display the wishlist planets with the PlanetsWishlistItem component. 
-          </div> 
-          */}
+            {planetsWishlist.map((planet) => (
+              <PlanetsWishlistItem
+                key={planet.name}
+                name={planet.name}
+                thumbnail={planet.thumbnail}
+                onRemove={() => removePlanetFromWishlist(planet.name)}
+              />
+            ))}
+          </div>
         </section>
         <section className="card">
           <h2>Possible destinations</h2>
-          <PlanetCard
-            name="Europa"
-            description="Europa is one of Jupiter's moons believed to have a liquid water ocean beneath its icy surface, making it a prime candidate for extraterrestrial life."
-            thumbnail="/destination/image-europa.png"
-            isSelected={isPlanetInWishlist("Europa")}
-            togglePlanetSelection={togglePlanetSelection}
-          />
-          <PlanetCard
-            name="Moon"
-            description="Earth's Moon is the closest celestial body to our planet, offering a unique opportunity to experience low gravity and stunning views of Earth."
-            thumbnail="/destination/image-moon.png"
-            isSelected={isPlanetInWishlist("Moon")}
-            togglePlanetSelection={togglePlanetSelection}
-          />
-          <PlanetCard
-            name="Mars"
-            description="Mars is the fourth planet from the Sun. Known as the Red Planet, it has the largest volcano and canyon in the solar system."
-            thumbnail="/destination/image-mars.png"
-            isSelected={isPlanetInWishlist("Mars")}
-            togglePlanetSelection={togglePlanetSelection}
-          />
-          <PlanetCard
-            name="Titan"
-            description="Titan is Saturn's largest moon and the only moon known to have a dense atmosphere and bodies of liquid on its surface."
-            thumbnail="/destination/image-titan.png"
-            isSelected={isPlanetInWishlist("Titan")}
-            togglePlanetSelection={togglePlanetSelection}
-          />
+
+          {/* Week 3 - .map() over PLANETS_DATA */}
+          {PLANETS_DATA.map((planet) => (
+            <PlanetCard
+              key={planet.name}
+              name={planet.name}
+              description={planet.description}
+              thumbnail={planet.thumbnail}
+              isSelected={isPlanetInWishlist(planet.name)}
+              togglePlanetSelection={togglePlanetSelection}
+            />
+          ))}
         </section>
       </main>
     </div>
