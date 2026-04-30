@@ -1,7 +1,33 @@
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
-
+const pageLinks = [
+  { path: "/about_us", label: "About Us" },
+  { path: "/destination", label: "Destination" },
+  { path: "/nasa_collaboration", label: "NASA Collaboration" },
+];
+const socialMediaLinks = [
+  {
+    url: "https://facebook.com",
+    title: "Facebook",
+    icon: "/socialmedia/facebook.png",
+  },
+  {
+    url: "https://instagram.com",
+    title: "Instagram",
+    icon: "/socialmedia/instagram.png",
+  },
+  {
+    url: "https://linkedin.com",
+    title: "LinkedIn",
+    icon: "/socialmedia/linkedIn.png",
+  },
+  {
+    url: "https://youtube.com",
+    title: "Youtube",
+    icon: "/socialmedia/youtube.png",
+  },
+];
 const SocialMediaItem = ({ url, title, icon }) => {
   return (
     <li>
@@ -30,45 +56,27 @@ export const Footer = () => {
       <div className={styles.pages}>
         <h3>Pages</h3>
         <ul>
-          <li>
-            <Link to="/about_us">About Us</Link>
-          </li>
-          <li>
-            <Link to="/destination">Destination</Link>
-          </li>
-          <li>
-            <Link to="/nasa_collaboration">NASA Collaboration</Link>
-          </li>
+          {pageLinks.map((link) => (
+            <li key={link.path}>
+              <Link to={link.path}>{link.label}</Link>
+            </li>
+          ))}
         </ul>
       </div>
+
       {/* Docs for the Link: https://reactrouter.com/api/components/Link#link. */}
 
-      {/* 🧑🏽‍🚀 Task - Week 1 */}
-      {/* Add a new list item for LINKEDIN */}
       <div className={styles.footerLinks}>
         <h3>Follow us</h3>
         <ul className={styles.footerList}>
-          <SocialMediaItem
-            url="https://facebook.com"
-            title="Facebook"
-            icon="/socialmedia/facebook.png"
-          />
-          <SocialMediaItem
-            url="https://instagram.com"
-            title="Instagram"
-            icon="/socialmedia/instagram.png"
-          />
-
-          <SocialMediaItem
-            url="https://linkedin.com"
-            title="LinkedIn"
-            icon="/socialmedia/linkedin.png"
-          />
-          <SocialMediaItem
-            url="https://youtube.com"
-            title="Youtube"
-            icon="/socialmedia/youtube.png"
-          />
+          {socialMediaLinks.map((item) => (
+            <SocialMediaItem
+              key={item.url}
+              url={item.url}
+              title={item.title}
+              icon={item.icon}
+            />
+          ))}
         </ul>
       </div>
     </footer>
