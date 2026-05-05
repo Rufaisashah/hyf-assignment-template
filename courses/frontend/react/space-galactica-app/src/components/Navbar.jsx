@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Planet } from "../icons/Planet";
 import { Badge } from "./Badge";
+import { useWishlist } from "../contexts/WishlistContext";
 import styles from "./Navbar.module.css";
 
 const navbarItems = [
@@ -35,6 +36,7 @@ const NavItem = ({ title, link, index, isActive }) => {
 
 export const Navbar = () => {
   const currentPath = useLocation().pathname;
+  const { wishlistCount } = useWishlist();
 
   return (
     <header className={styles.headerContainer}>
@@ -57,9 +59,8 @@ export const Navbar = () => {
             />
           ))}
         </ul>
-        {/* 🧑🏽‍🚀 Task - Week 4 - part 3 */}
-        {/* Take the count of the planets wishlist from the context and display it in the Badge. */}
-        <Badge count={0}>
+        
+        <Badge count={wishlistCount}>
           <Planet color="white" />
         </Badge>
       </nav>
