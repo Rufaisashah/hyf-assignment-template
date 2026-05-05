@@ -1,8 +1,8 @@
-import { useState } from "react";
 import styles from "./DestinationPage.module.css";
 import { PlanetCard } from "./PlanetCard";
 import { PlanetsWishlistItem } from "./PlanetsWishlistItem";
 import { AddWishlistItem } from "./AddWishlistItem";
+import { useWishlist } from "../../contexts/WishlistContext";
 
 const PLANETS_DATA = [
   {
@@ -32,26 +32,18 @@ const PLANETS_DATA = [
 ];
 
 export const Destinations = () => {
-  const [planetsWishlist, setPlanetsWishlist] = useState([]);
-
-  const isPlanetInWishlist = (planetName) => {
-    return planetsWishlist.some((planet) => planet.name === planetName);
-  };
-
+  const {
+    planetsWishlist,
+    addPlanetToWishlist,
+    removePlanetFromWishlist,
+    isPlanetInWishlist,
+  } = useWishlist();
   const togglePlanetSelection = (name, thumbnail) => {
     if (isPlanetInWishlist(name)) {
       removePlanetFromWishlist(name);
     } else {
       addPlanetToWishlist(name, thumbnail);
     }
-  };
-
-  const addPlanetToWishlist = (name, thumbnail) => {
-    setPlanetsWishlist((prev) => [...prev, { name, thumbnail }]);
-  };
-
-  const removePlanetFromWishlist = (name) => {
-    setPlanetsWishlist((prev) => prev.filter((planet) => planet.name !== name));
   };
 
   return (
@@ -67,10 +59,9 @@ export const Destinations = () => {
             <p>You have {planetsWishlist.length} planets in your wishlist</p>
           )}
 
-          {/* Week 3 - AddWishlistItem */}
+       
           <AddWishlistItem onAddWishlistItem={addPlanetToWishlist} />
 
-          {/* Week 3 - .map() over wishlist */}
           <h3>Your current wishlist</h3>
           <div className={styles.wishlistList}>
             {planetsWishlist.map((planet) => (
@@ -86,7 +77,7 @@ export const Destinations = () => {
         <section className="card">
           <h2>Possible destinations</h2>
 
-          {/* Week 3 - .map() over PLANETS_DATA */}
+         
           {PLANETS_DATA.map((planet) => (
             <PlanetCard
               key={planet.name}
@@ -105,7 +96,3 @@ export const Destinations = () => {
 
 export default Destinations;
 
-// 🧑🏽‍🚀 Task - Week 4 - part 2
-// Hate to break it to you, but you will have to make some changes to the code you already wrote.
-// Now that you have context, grab and use the context data in this.
-// You will need to replace some of the variables and functions with the ones from the context.

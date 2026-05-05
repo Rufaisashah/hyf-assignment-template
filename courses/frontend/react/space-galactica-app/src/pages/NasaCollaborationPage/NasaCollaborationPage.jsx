@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./NasaCollaborationPage.module.css";
 
 const NASA_URLs = {
-// ✅ what it should be
-astronomyPicOfTheDay: `https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_NASA_API_KEY}`,
+  astronomyPicOfTheDay: `https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_NASA_API_KEY}`,
   marsRoverPhoto:
     "https://rovers.nebulum.one/api/v1/rovers/curiosity/photos?earth_date=2015-6-3",
 };
@@ -28,7 +27,6 @@ export const NasaCollaboration = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-  
     const fetchRoverPhotos = async () => {
       try {
         const response = await fetch(NASA_URLs.marsRoverPhoto);
@@ -40,7 +38,6 @@ export const NasaCollaboration = () => {
         console.error("Rover fetch error:", err);
       }
     };
-
 
     const fetchDailyImg = async () => {
       try {
@@ -62,7 +59,6 @@ export const NasaCollaboration = () => {
       <main className="mainContent">
         <h1>Collaboration with NASA</h1>
 
-       
         <section className="card">
           <h2>Astronomy Picture of the day</h2>
           {dailyImg.url ? (
@@ -80,7 +76,6 @@ export const NasaCollaboration = () => {
           )}
         </section>
 
-       
         <section className="card">
           <h2>Rover Photos</h2>
           {error ? (
@@ -88,7 +83,6 @@ export const NasaCollaboration = () => {
           ) : roverPhoto?.photos?.length > 0 ? (
             <div className={styles.roverContainer}>
               {" "}
-             
               {roverPhoto.photos.map((photo) => (
                 <RoverPhoto
                   key={photo.id}
