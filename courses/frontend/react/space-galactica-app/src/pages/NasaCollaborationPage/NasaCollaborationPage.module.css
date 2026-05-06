@@ -8,3 +8,18 @@
   width: auto;
   height: 400px;
 }
+.roverContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.roverPhotoCard {
+  width: 200px;
+}
+
+.roverPhotoCard img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}

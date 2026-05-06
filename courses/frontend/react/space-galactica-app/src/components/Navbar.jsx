@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Planet } from "../icons/Planet";
 import { Badge } from "./Badge";
+import { useWishlist } from "../contexts/WishlistContext";
 import styles from "./Navbar.module.css";
 
 const navbarItems = [
@@ -35,6 +36,7 @@ const NavItem = ({ title, link, index, isActive }) => {
 
 export const Navbar = () => {
   const currentPath = useLocation().pathname;
+  const { wishlistCount } = useWishlist();
 
   return (
     <header className={styles.headerContainer}>
@@ -47,31 +49,18 @@ export const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.navbarBG} />
         <ul className={styles.navbarList}>
-          <NavItem
-            title={navbarItems[0].title}
-            link={navbarItems[0].link}
-            index={0}
-            isActive={navbarItems[0].link === currentPath}
-          />
-          <NavItem
-            title={navbarItems[1].title}
-            link={navbarItems[1].link}
-            index={1}
-            isActive={navbarItems[1].link === currentPath}
-          />
-          <NavItem
-            title={navbarItems[2].title}
-            link={navbarItems[2].link}
-            index={2}
-            isActive={navbarItems[2].link === currentPath}
-          />
-          {/* 🧑🏽‍🚀 Task - Week 3 */}
-          {/* Replace repeating content by using .map() and the previously created NavItem component. */}
-          <li className={styles.wishlistBadge} aria-label="Wishlist"></li>
+          {navbarItems.map((item, index) => (
+            <NavItem
+              key={item.link}
+              title={item.title}
+              link={item.link}
+              index={index}
+              isActive={item.link === currentPath}
+            />
+          ))}
         </ul>
-        {/* 🧑🏽‍🚀 Task - Week 4 - part 3 */}
-        {/* Take the count of the planets wishlist from the context and display it in the Badge. */}
-        <Badge count={0}>
+        
+        <Badge count={wishlistCount}>
           <Planet color="white" />
         </Badge>
       </nav>
